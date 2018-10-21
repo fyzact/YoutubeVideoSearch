@@ -1,0 +1,15 @@
+
+<h1>
+  {{title}}
+</h1>
+
+Videolar
+<input [(ngModel)]="videoNameKey" name="videoNameKey"  (keyup)="videoOnKeyUp()" />
+<div *ngFor="let youtube of  this.youtubeList | async">
+  <img src='{{youtube.thumbnail}}'/><br/>
+ {{youtube.title}}
+ <nav>
+ <a routerLink="/details/{{youtube.id}}">izle</a>
+ </nav>
+</div>
+<span>Toplam Kayıt  {{(this.youtubeList | async)?.length}}</span>
